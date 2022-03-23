@@ -1,0 +1,171 @@
+/*Variables*/
+:root{
+    /*Colors*/
+        /*Reds*/ 
+            --dark-red: rgb(92, 0, 0);/*Basically maroon*/
+            --middle-red: rgb(185, 0, 0);
+            --light-red: rgb(255, 0, 0);
+        /*Oranges*/
+            --dark-orange: rgb(184, 119, 0);
+            /*Middle orange doesn't exist, the difference between dark and light orange was too little. Sorry*/
+            --light-orange: orange;
+        /*Yellows*/
+            --dark-yellow: rgb(195, 195, 0);
+            --middle-yellow: rgb(212, 212, 0);
+            --light-yellow: rgb(255, 255, 0);
+        /*Greens*/
+            --dark-green: rgb(0, 87, 0);
+            --middle-green: rgb(0, 131, 0);
+            --light-green: rgb(50, 221, 50);
+        /*Blues*/
+            --dark-blue: rgb(0, 0, 82);
+            --middle-blue: rgb(0, 90, 200);
+            --light-blue: rgb(3, 91, 255);
+            --baby-blue: rgb(137, 207, 240);
+        /*Others*/
+            /*Whites*/
+                --off-white: rgb(218, 218, 218);
+                --white: white;
+            /*Grays*/
+                --dark-gray: rgb(54, 54, 54);
+                --middle-gray: rgb(80, 80, 80);
+                --light-gray: rgb(175, 175, 175);
+            /*Black and Brown*/
+                --black: black;
+                --brown: rgb(53, 41, 41);
+        /*Misc.*/
+        --indigo: indigo;
+        --purple: rgb(148,0,211);
+}
+/*Fonts*/
+
+@font-face {
+    font-family: "Circular";
+    src: url("CircularStd-Bold.otf");
+}
+
+/*General Styles*/
+html{
+    scroll-behavior: smooth;
+    font-family: "Circular";
+}
+body{
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    color: var(--off-white);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(144deg, #c471ed, var(--light-blue));
+    background-size: 150% 150%;
+    
+
+    animation: background 10s ease infinite;
+
+    overflow-x: hidden;
+}
+
+@keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+body :not(#bar, #bar a, #bar span #bar h1, #desc, i, b, u, ion-icons){
+    margin-left: 20px;
+}
+hr{ 
+    box-shadow: 0 0 15px var(--middle-gray);
+    background: var(--dark-gray);
+}
+a{
+    color: var(--light-blue);
+    text-decoration: none;
+}
+a:visited{
+    color: var(--light-blue);
+}
+
+.display{
+    text-decoration: underline var(--light-blue);
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 2px;
+}
+/*Div Styles*/
+#bar{
+    z-index: 999;
+    height: 70px;
+    position: fixed;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink:0;
+    width: 100%;
+    background: var(--dark-gray);
+    backdrop-filter: blur(8px);
+    color: var(--off-white);
+    box-shadow: 0 0 8px black;
+}
+#bar a{
+    font-size: 115%;
+    margin: 10px;
+    background: var(--middle-gray);
+    padding: 7px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+#bar a:hover{
+    background: var(--off-white);
+}
+#bar h1{
+    margin: 10px;
+}
+#bar span{
+    cursor: pointer;
+}
+#desc{
+    max-width: 80vw;
+    z-index: 0;
+    margin: auto;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );  
+}
+#desc.straight{
+    flex-direction: column;
+}
+img[alt="scroll"]{
+    width: 50px;
+    position: absolute;
+    right: 50vw;
+    bottom: 0%;
+}
+img[alt="upgrade"]{
+    width: 32px;
+}
+img[alt="right arrow"]{
+    width: 20px;
+    margin: 10px;
+}
+#main, #about{
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.points1{
+    list-style-image: url("icons8-right-arrow-16.png");
+}
+#post{
+    max-width: 50vw;
+    max-height: 200px;
+    background: rgba(238, 238, 238, 0.582);
+    backdrop-filter: 20px; 
+}
